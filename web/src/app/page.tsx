@@ -1,8 +1,11 @@
 export default function Home() {
   return (
-    <div className="h-screen bg-zinc-900 text-zinc-50 p-6">
-      <h1 className="text-4xl font-bold">Sua cápsula do tempo</h1>
-      <h1 className="text-4xl font-bold font-alt">Sua cápsula do tempo</h1>
-    </div>
+    <main className="grid grid-cols-2 min-h-screen">
+      <div>
+        <h1>Spacetime</h1>
+        <p>Sua cápsula do tempo</p>
+      </div>
+      <div></div>
+    </main>
   );
 }
