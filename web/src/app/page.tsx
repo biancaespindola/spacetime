@@ -1,3 +1,4 @@
+import { User } from "lucide-react";
 export default function Home() {
   return (
     <main className="grid grid-cols-2 min-h-screen">
@@ -9,9 +10,12 @@ export default function Home() {
         {/* Stripes */}
         <div className="absolute bottom-0 right-2 top-0 w-2 bg-stripes" />
 
-        <h1>Bom dia</h1>
-        <h1>Bom dia</h1>
-        <h1>Bom dia</h1>
+        {/* Elements */}
+        <a href="flex items-center gap-3 text-left">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-400">
+            <User className="h-5 w-5 text-gray-500" />
+          </div>
+        </a>
       </div>
       <div className="flex flex-col bg-[url('../assets/bg-stars.svg')] bg-cover p-16">
         <div className="flex flex-1 items-center justify-center">
