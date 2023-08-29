@@ -51,7 +51,27 @@ export default function Home() {
         </div>
 
         {/* Page */}
-        <div>Feito com amor por Bianca</div>
+        <div className="text-sm leading-relaxed text-gray-200">
+          Feito com ❤️ por{" "}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            className="underline  text-purple-200 hover:text-purple-50"
+            href="https://github.com/biancaespindola"
+          >
+            Bianca
+          </a>{" "}
+          com a{" "}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            className="underline hover:text-gray-100"
+            href="https://www.rocketseat.com.br/"
+          >
+            Rocketseat
+          </a>
+          🚀
+        </div>
       </div>
 
       {/* Right */}
