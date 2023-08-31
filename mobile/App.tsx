@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, Text, View } from 'react-native'
+import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 
 import {
   useFonts,
@@ -11,6 +11,7 @@ import {
   BaiJamjuree_700Bold,
 } from '@expo-google-fonts/bai-jamjuree'
 
+import blurBg from './assets/bg-blur.png'
 
 export default function App() {
   const [hasLoadedFonts] = useFonts({
@@ -25,23 +26,28 @@ export default function App() {
 
   return (
     // TODO: Fazer funcionar o tailwind no react native
-    <View style={styles.container} className=" flex-1 items-center justify-center bg-gray-900">
-      <Text style={styles.title } className='text-5xl font-bold text-gray-50'>Spacetime</Text>
-      <Text style={styles.alt } className='text-2xl font-bold text-gray-50'>Uma viagem no tempo</Text>
+    //<Text style={styles.title } className='text-5xl font-bold text-gray-50'>Spacetime</Text>
+    //<Text style={styles.alt } className='text-2xl font-bold text-gray-50'>Uma viagem no tempo</Text>
+    <ImageBackground imageStyle={{ opacity: 0.5 }} source={blurBg} style={styles.container} className="relative flex-1 items-center bg-gray-900">
+  
 
       <StatusBar style="light" translucent />
-    </View>
+    </ImageBackground>
   )
 }
 const styles = StyleSheet.create({
   
+  title: {
+    fontFamily: 'Roboto_700Bold',
+    color: '#eaeaea',
+    fontSize: 56,
+  },
   body:{
     fontFamily: 'Roboto_400Regular',
   },
   alt:{
     fontFamily: 'BaiJamjuree_700Bold',
     color: '#eaeaea',
-    fontWeight: '200',
     fontSize: 30,
   },
 
@@ -49,12 +55,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#121215',
     alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontFamily: 'BaiJamjuree_700Bold',
-    color: '#eaeaea',
-    fontWeight: '900',
-    fontSize: 56,
+    position: 'relative',	
   },
 })
