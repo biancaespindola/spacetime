@@ -12,6 +12,10 @@ import {
 } from '@expo-google-fonts/bai-jamjuree'
 
 import blurBg from './assets/bg-blur.png'
+import Stripes from './assets/stripes.svg'
+import { styled } from 'nativewind'
+
+const StyledStripes = styled(Stripes)
 
 export default function App() {
   const [hasLoadedFonts] = useFonts({
@@ -28,8 +32,12 @@ export default function App() {
     // TODO: Fazer funcionar o tailwind no react native
     //<Text style={styles.title } className='text-5xl font-bold text-gray-50'>Spacetime</Text>
     //<Text style={styles.alt } className='text-2xl font-bold text-gray-50'>Uma viagem no tempo</Text>
-    <ImageBackground imageStyle={{ opacity: 0.5 }} source={blurBg} style={styles.container} className="relative flex-1 items-center bg-gray-900">
-  
+    <ImageBackground 
+      imageStyle={{ position: 'absolute', left: '-100%'  }} 
+      source={blurBg} style={styles.container} 
+      className="relative flex-1 items-center bg-gray-900" 
+    >
+      <Stripes className="absolute left-2" style={styles.stripes} />
 
       <StatusBar style="light" translucent />
     </ImageBackground>
@@ -57,4 +65,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     position: 'relative',	
   },
+
+  stripes: {
+    	position: 'absolute',
+      left: 8,
+  }
 })
