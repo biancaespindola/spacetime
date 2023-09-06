@@ -64,6 +64,7 @@ export default function App() {
         </View>
       
         <TouchableOpacity
+          activeOpacity={0.7}
           className='rounded-full bg-green-500 px-5 py-3'
           style={{borderRadius: 100, backgroundColor: "#04d361", paddingHorizontal: 20, paddingVertical: 12}}
         >
@@ -75,7 +76,14 @@ export default function App() {
           </Text>
         </TouchableOpacity>
       </View>
-      
+
+      <Text
+      style={styles.footer}
+        className=''
+      >
+          Feito com 💜 por Bianca no NLW da Rocketseat
+      </Text>
+
       <StatusBar style="light" translucent />
     </ImageBackground>
   )
@@ -101,6 +109,10 @@ const styles = StyleSheet.create({
     color: '#000',
     fontSize: 16,
     textTransform: 'uppercase',
+    
+  },
+
+  footer: {
     
   },
 
