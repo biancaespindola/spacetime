@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar'
-import { ImageBackground, StyleSheet, Text, View } from 'react-native'
+import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 import {
   useFonts,
@@ -12,6 +12,7 @@ import {
 } from '@expo-google-fonts/bai-jamjuree'
 
 import blurBg from './assets/bg-blur.png'
+import Logo from './assets/spacetime-logo.svg'
 import Stripes from './assets/stripes.svg'
 import { styled } from 'nativewind'
 
@@ -35,10 +36,46 @@ export default function App() {
     <ImageBackground 
       imageStyle={{ position: 'absolute', left: '-100%'  }} 
       source={blurBg} style={styles.container} 
-      className="relative flex-1 items-center bg-gray-900" 
+      className="relative px-8 flex-1 items-center bg-gray-900" 
     >
-      <Stripes className="absolute left-2" style={styles.stripes} />
+      <StyledStripes className="absolute left-2" style={styles.stripes} />
 
+      <View 
+        className="flex-1 items-center justify-center gap-6 "
+        style={{flex: 1, alignItems: 'center', justifyContent: 'center', gap: 1.5}}
+      > 
+        <Logo />
+
+        <View
+          className='space-y-2'
+          style={{marginTop: 12, marginBottom: 12}}
+        >
+        <Text
+          style={styles.title }
+          className='text-center font-title text-2xl leading-tight text-gray-50'
+        >
+          Sua cápsula do tempo
+        </Text>
+        <Text
+        style={styles.body}
+          className='text-center font-body text-base leading-relaxed text-gray-100'
+        >          
+          Colecione momentos marcantes da sua jornada e compartilhe (se quiser) com o mundo!</Text>
+        </View>
+      
+        <TouchableOpacity
+          className='rounded-full bg-green-500 px-5 py-3'
+          style={{borderRadius: 100, backgroundColor: "#04d361", paddingHorizontal: 20, paddingVertical: 12}}
+        >
+          <Text
+          className='font-alt text-sm font-bold uppercase text-black'
+          style={styles.alt}
+          >
+            COMEÇAR A CADASTRAR
+          </Text>
+        </TouchableOpacity>
+      </View>
+      
       <StatusBar style="light" translucent />
     </ImageBackground>
   )
@@ -48,15 +85,23 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: 'Roboto_700Bold',
     color: '#eaeaea',
-    fontSize: 56,
+    fontSize: 24,
+    lineHeight: 40,
+    textAlign: 'center',
   },
   body:{
     fontFamily: 'Roboto_400Regular',
+    color: '#bebebf',
+    textAlign: 'center',
+    fontSize: 16,
+    lineHeight: 28,
   },
   alt:{
     fontFamily: 'BaiJamjuree_700Bold',
-    color: '#eaeaea',
-    fontSize: 30,
+    color: '#000',
+    fontSize: 16,
+    textTransform: 'uppercase',
+    
   },
 
   container: {
@@ -64,6 +109,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#121215',
     alignItems: 'center',
     position: 'relative',	
+    paddingHorizontal: 64,
   },
 
   stripes: {
